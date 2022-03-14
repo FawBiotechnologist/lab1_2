@@ -22,23 +22,27 @@ import pl.com.bottega.ecommerce.sharedkernel.Money;
 
 public class Invoice {
 
-    private ClientData client;
+    private final ClientData client;
 
     private Money net;
 
     private Money gros;
 
-    private List<InvoiceLine> items;
+    private final List<InvoiceLine> items;
 
     private Id id;
 
-    Invoice(Id invoiceId, ClientData client) {
+    private Invoice(Id invoiceId, ClientData client) {
         this.id = invoiceId;
         this.client = client;
-        this.items = new ArrayList<InvoiceLine>();
+        this.items = new ArrayList<>();
 
         this.net = Money.ZERO;
         this.gros = Money.ZERO;
+    }
+
+    public static Invoice createInvoiceObject(Id invoiceId, ClientData client) {
+        return new Invoice(invoiceId, client);
     }
 
     public void addItem(InvoiceLine item) {
@@ -49,7 +53,6 @@ public class Invoice {
     }
 
     /**
-     * 
      * @return immutable projection
      */
     public List<InvoiceLine> getItems() {
