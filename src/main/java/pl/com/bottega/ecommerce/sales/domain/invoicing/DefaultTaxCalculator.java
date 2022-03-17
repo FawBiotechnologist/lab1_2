@@ -4,8 +4,9 @@ import pl.com.bottega.ecommerce.sharedkernel.Money;
 
 import java.math.BigDecimal;
 
-public class DefaultTaxCalculator {
+public class DefaultTaxCalculator implements TaxCalculator {
 
+    @Override
     public InvoiceLine generateInvoiceLine(RequestItem item) {
         Money net = item.getTotalCost();
         BigDecimal ratio;
