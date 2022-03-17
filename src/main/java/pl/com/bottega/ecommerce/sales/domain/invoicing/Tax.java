@@ -16,9 +16,9 @@ import pl.com.bottega.ecommerce.sharedkernel.Money;
 
 public class Tax {
 
-    private Money amount;
+    private final Money amount;
 
-    private String description;
+    private final String description;
 
     public Tax(Money amount, String description) {
         super();

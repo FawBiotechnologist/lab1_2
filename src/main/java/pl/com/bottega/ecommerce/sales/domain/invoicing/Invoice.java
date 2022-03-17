@@ -30,7 +30,8 @@ public class Invoice {
 
     private final List<InvoiceLine> items;
 
-    private Id id;
+    private final Id id;
+
 
     private Invoice(Id invoiceId, ClientData client) {
         this.id = invoiceId;
@@ -69,6 +70,10 @@ public class Invoice {
 
     public Money getGros() {
         return gros;
+    }
+
+    public Id getId() {
+        return id;
     }
 
 }

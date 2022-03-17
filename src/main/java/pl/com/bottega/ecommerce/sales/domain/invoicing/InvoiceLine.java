@@ -20,15 +20,15 @@ import pl.com.bottega.ecommerce.sharedkernel.Money;
 
 public class InvoiceLine {
 
-    private ProductData product;
+    private final ProductData product;
 
-    private int quantity;
+    private final int quantity;
 
-    private Money net;
+    private final Money net;
 
-    private Money gros;
+    private final Money gros;
 
-    private Tax tax;
+    private final Tax tax;
 
     InvoiceLine(ProductData product, int quantity, Money net, Tax tax) {
         this.product = product;

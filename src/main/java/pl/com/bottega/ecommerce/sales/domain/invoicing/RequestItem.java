@@ -17,11 +17,11 @@ import pl.com.bottega.ecommerce.sharedkernel.Money;
 
 class RequestItem {
 
-    private ProductData productData;
+    private final ProductData productData;
 
-    private int quantity;
+    private final int quantity;
 
-    private Money totalCost;
+    private final Money totalCost;
 
     public RequestItem(ProductData productData, int quantity, Money totalCost) {
         this.productData = productData;
